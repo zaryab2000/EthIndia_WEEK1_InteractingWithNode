@@ -23,20 +23,27 @@ else{
     //console.log('GOT IT');
     //console.log(res)
     transaction_list =res.transactions
-    if(transaction_list.length!=0){
+    //console.log(transaction_list[1])
+     if(transaction_list.length!=0){
         console.log('FOUND IT')
-        console.log("TOTAL TRANSACTIONS: "+transaction_list.length)
+       // console.log("TOTAL TRANSACTIONS: "+transaction_list.length)
         console.log("BLOCK NUMBER: "+res.number)
         console.log("TRANSACTION_LIST: "+transaction_list+"\n")
-        value = res.hash + "\n";
-        console.log("BLOCK HASH: "+value+"\n")
+       for(i=0;i<transaction_list.length;i++){
+            getRec(transaction_list[i])
+        }
+
+           //value = res.hash + "\n";
+        //console.log("BLOCK HASH: "+value+"\n")
         //hash_list.push(res.hash)
 
     }
+    
     else{
-        return 0
+        return 
     }
-  }
+
+}
 })
 }
 
@@ -63,6 +70,32 @@ if (err){
     console.log(err);
 }
 else{
+   // console.log('GOT IT');
+    var receipt = res
+    var blockHash = res.blockHash
+    var address = receipt.contractAddress
+    //console.log(res)
+    if(address){
+        console.log('BLOCK HASH: '+blockHash)
+         console.log("CONTRACT ADDRESS: "+address)
+
+    }
+    else{
+        return 0
+    }
+    console.log("\n")
+}
+})
+}
+
+
+
+function getRecp(num){
+web3.eth.getTransactionReceipt(num,function(err,res){
+if (err){
+    console.log(err);
+}
+else{
     console.log('GOT IT');
     console.log(res)
     //value = res.hash + "\n";
@@ -79,8 +112,8 @@ function check(){
     console.log("\n")
 }
 }
-check()
-//getHash(5644)
+//check()
+getHash(2850352)
 //web3.eth.getTransactionReceipt('0xd4796b706170ef2f26936f2f859d8b5519f5b6c38c2a5715e31976d328b5e6bd').then(console.log);
 //getRec('0x24335c13fe6da3dcda7c58579e9805f6df7f9f30ca70a9ca5cb1ebff54411a6f')
 //getHash(2850352)
