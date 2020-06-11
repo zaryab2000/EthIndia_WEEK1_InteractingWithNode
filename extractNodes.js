@@ -98,26 +98,10 @@ else{
 }
 
 
-
-function getRecp(num){
-web3.eth.getTransactionReceipt(num,function(err,res){
-if (err){
-    console.log(err);
-}
-else{
-    console.log('GOT IT');
-    console.log(res)
-    //value = res.hash + "\n";
-    //console.log(value)
-    //hash_list.push(res.hash)
-}
-})
-}
-
 console.log("STARTING CODE");
 function check(){
-    var start = 20000
-    var end = 21000
+    var start = 21000
+    var end = 22000
 
     for(i=start;i<end;i++){
     getHash(i)
@@ -125,12 +109,19 @@ function check(){
 }
 }
 check()
-//getHash(2850352)
-//web3.eth.getTransactionReceipt('0xd4796b706170ef2f26936f2f859d8b5519f5b6c38c2a5715e31976d328b5e6bd').then(console.log);
-//getRec('0x24335c13fe6da3dcda7c58579e9805f6df7f9f30ca70a9ca5cb1ebff54411a6f')
-//getHash(2850352)
-//getTransactionHash('0xd4796b706170ef2f26936f2f859d8b5519f5b6c38c2a5715e31976d328b5e6bd')
-//getTransactionHash('0xdf7ed0531022eca804fedde14f2c9ee32773cd9781069a02a2682408013e5b7b')
+// function getRecp(num){
+// web3.eth.getTransactionReceipt(num,function(err,res){
+// if (err){
+//     console.log(err);
+// }
+// else{
+//     console.log('GOT IT');
+//     console.log(res)
+// }
+// })
+// }
+
+
 
 
 // RESULTS TOP
