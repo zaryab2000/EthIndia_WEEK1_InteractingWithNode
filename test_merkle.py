@@ -49,7 +49,7 @@ class CreatMekleNow:
 
 			self.create_tree()
 
-	def GetprevTransacts (self):
+	def Get_past_transacion(self):
 		return self.prevTransacts
 
 	def Get_Root_leaf(self):
@@ -66,8 +66,9 @@ if __name__ == "__main__":
 
 	Tree.create_tree()
 
-	prevTransacts = Tree.GetprevTransacts()
+	prevTransacts = Tree.Get_past_transacion()
 
 
 	print('Final root of the tree : ',Tree.Get_Root_leaf())
+	# print(json.dumps(prevTransacts, indent=4))
 	print("-" * 50 )
